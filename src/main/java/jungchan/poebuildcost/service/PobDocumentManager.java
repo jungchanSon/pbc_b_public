@@ -16,12 +16,12 @@ import java.util.ArrayList;
 @RequiredArgsConstructor
 public class PobDocumentManager implements DocumentManager {
 
-    NodeList items;
+    private ThreadLocal<NodeList> itemsThreadLocal = new ThreadLocal<>();
 
     @Override
     public ArrayList<Item> parseItems(Document document) {
 
-        items = document.getElementsByTagName("Item");
+        itemsThreadLocal.set(document.getElementsByTagName("Item"));
 
         Node sockets = document.getElementsByTagName("Sockets").item(0);
         Node itemSet = document.getElementsByTagName("ItemSet").item(0);
@@ -79,7 +79,7 @@ public class PobDocumentManager implements DocumentManager {
     }
 
     private Item createItemById(String socketId, ItemType itemType) {
-
+        NodeList items = itemsThreadLocal.get();
         for (int i = 0; i < items.getLength(); i++) {
             Node item = items.item(i);
             String itemId = item.getAttributes().getNamedItem("id").getNodeValue();
@@ -111,6 +111,7 @@ public class PobDocumentManager implements DocumentManager {
     private ArrayList<Item> createJewelsById(ArrayList<String> socketIds) {
 
         ArrayList<Item> jewels = new ArrayList<>();
+        NodeList items = itemsThreadLocal.get();
 
         for (int i = 0; i < items.getLength(); i++) {
             Node item = items.item(i);
