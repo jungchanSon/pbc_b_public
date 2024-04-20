@@ -3,6 +3,8 @@ package jungchan.poebuildcost.controller;
 import jakarta.validation.Valid;
 import jungchan.poebuildcost.entity.item.Item;
 import jungchan.poebuildcost.form.PobCodeForm;
+import jungchan.poebuildcost.repository.MongoDocumentEntity.Pseudo;
+import jungchan.poebuildcost.repository.PseudoRepo;
 import jungchan.poebuildcost.service.DocumentManager;
 import jungchan.poebuildcost.service.pobCode.PobCode;
 import jungchan.poebuildcost.service.PobDocumentManager;
@@ -30,6 +32,7 @@ public class PobCodeController {
 
     @RequestMapping(value = "/pobCode", method = RequestMethod.POST)
     public ResponseEntity pobCode(@Valid PobCodeForm pobCodeForm, BindingResult result) throws DataFormatException, IOException, ParserConfigurationException, SAXException {
+
         Document document = pobCodeService.pobCode(pobCodeForm);
         ArrayList<Item> items = pobDocumentManager.parseItems(document);
         return ResponseEntity.ok().body(items);
