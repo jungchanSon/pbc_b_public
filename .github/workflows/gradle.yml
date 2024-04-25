@@ -36,6 +36,7 @@ jobs:
         distribution: 'temurin'
 
     # Configuration 가져오기
+    - name: Conf 복사/생성
     - run: touch ./src/main/resources/application.yaml
     - run: echo "${{ secrets.APPLICATION }}" > ./src/main/resources/application.properties
 
