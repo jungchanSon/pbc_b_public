@@ -38,10 +38,10 @@ jobs:
     # Configuration 가져오기
     - name: Conf 복사/생성
       run: touch ./src/main/resources/application.yaml
-    - run: echo "${{ secrets.APPLICATION }}" > ./src/main/resources/application.properties
+    - run: echo "${{ secrets.APPLICATION }}" > ./src/main/resources/application.yaml
 
     - run: touch ./src/main/resources/profile.yml
-    - run: echo "${{ secrets.PROFILE }}" > ./src/main/resources/profile.properties
+    - run: echo "${{ secrets.PROFILE }}" > ./src/main/resources/profile.yml
 
     # Configure Gradle for optimal use in GiHub Actions, including caching of downloaded dependencies.
     # See: https://github.com/gradle/actions/blob/main/setup-gradle/README.md
