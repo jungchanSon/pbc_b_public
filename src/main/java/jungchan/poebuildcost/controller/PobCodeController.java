@@ -32,9 +32,12 @@ public class PobCodeController {
 
     @RequestMapping(value = "/pobCode", method = RequestMethod.POST)
     public ResponseEntity pobCode(@Valid PobCodeForm pobCodeForm, BindingResult result) throws DataFormatException, IOException, ParserConfigurationException, SAXException {
-
+        long startMs = System.currentTimeMillis();
         Document document = pobCodeService.pobCode(pobCodeForm);
         ArrayList<Item> items = pobDocumentManager.parseItems(document);
+        long endMs = System.currentTimeMillis();
+
+        log.info("[pobCode] response for /pobCode={}ms", endMs - startMs);
         return ResponseEntity.ok().body(items);
     }
 }

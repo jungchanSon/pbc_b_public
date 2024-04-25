@@ -25,7 +25,6 @@ public class ProfileController {
                 .findFirst()
                 .orElse("");
 
-        System.out.println("s = " + s);
         return Arrays.stream(env.getActiveProfiles())
                 .findFirst()
                 .orElse("");
