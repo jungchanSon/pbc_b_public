@@ -14,7 +14,7 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController("pobUrl")
 @Slf4j
 @RequiredArgsConstructor
-@CrossOrigin(originPatterns = "https://*.poebuildcost.com")
+@CrossOrigin(originPatterns = {"https://*.poebuildcost.com", "https://poebuildcost.com"})
 public class PobUrlController {
 
     private final PobUrlService pobUrlService;

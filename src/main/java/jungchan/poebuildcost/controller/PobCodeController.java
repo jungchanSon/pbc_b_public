@@ -24,7 +24,7 @@ import java.util.zip.DataFormatException;
 @RestController()
 @Slf4j
 @RequiredArgsConstructor
-@CrossOrigin(originPatterns = "https://*.poebuildcost.com")
+@CrossOrigin(originPatterns = {"https://*.poebuildcost.com", "https://poebuildcost.com"})
 @RequestMapping("/api")
 public class PobCodeController {
 
