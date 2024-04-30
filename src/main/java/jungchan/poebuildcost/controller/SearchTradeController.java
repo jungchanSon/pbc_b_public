@@ -21,7 +21,7 @@ import java.util.zip.DataFormatException;
 @RequiredArgsConstructor
 @RestController()
 @RequestMapping("/api")
-@CrossOrigin(originPatterns = "*")
+@CrossOrigin(originPatterns = "https://*.poebuildcost.com")
 public class SearchTradeController {
 
     private final ProxyService proxyService;

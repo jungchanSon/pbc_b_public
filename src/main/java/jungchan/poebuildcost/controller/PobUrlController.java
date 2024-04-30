@@ -7,12 +7,14 @@ import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.http.ResponseEntity;
 import org.springframework.validation.BindingResult;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController("pobUrl")
 @Slf4j
 @RequiredArgsConstructor
+@CrossOrigin(originPatterns = "https://*.poebuildcost.com")
 public class PobUrlController {
 
     private final PobUrlService pobUrlService;
