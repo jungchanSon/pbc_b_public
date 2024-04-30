@@ -21,10 +21,11 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.zip.DataFormatException;
 
-@RestController
+@RestController()
 @Slf4j
 @RequiredArgsConstructor
 @CrossOrigin(originPatterns = "*")
+@RequestMapping("/api")
 public class PobCodeController {
 
     private final PobCode pobCodeService;

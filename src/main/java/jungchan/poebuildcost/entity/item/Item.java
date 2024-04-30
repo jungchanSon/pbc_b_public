@@ -1,6 +1,5 @@
 package jungchan.poebuildcost.entity.item;
 
-import jungchan.poebuildcost.controller.temp.TmpDto;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;

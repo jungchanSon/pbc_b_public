@@ -9,7 +9,7 @@ import lombok.ToString;
 @Setter
 @ToString
 @NoArgsConstructor
-public class TmpDto {
+public class SearchTradeReqForm {
 
     Query query;
     Sort sort;
