@@ -1,5 +1,6 @@
 package jungchan.poebuildcost.entity.item;
 
+import jungchan.poebuildcost.controller.temp.TmpDto;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
@@ -18,7 +19,6 @@ public class Item {
     String uniqueId;
     String radius;
     ItemType itemType;
-
     int itemLevel;
     int quality;
     int levelReq;
@@ -29,7 +29,6 @@ public class Item {
     public ArrayList<String> options = new ArrayList<>();
     public ArrayList<String> optionsById = new ArrayList<>();
     public ArrayList<List<Integer>> optionsByValue = new ArrayList<>();
-
 
     @Override
     public String toString() {
