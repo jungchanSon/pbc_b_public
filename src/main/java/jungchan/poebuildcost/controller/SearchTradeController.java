@@ -30,13 +30,15 @@ public class SearchTradeController {
 
     @RequestMapping(value = "/trade/search", method = RequestMethod.POST)
     public ResponseEntity searchTrade(@RequestBody SearchTradeReqForm searchTradeReqForm, BindingResult result) throws DataFormatException, IOException, ParserConfigurationException, SAXException {
-
+        long startMs = System.currentTimeMillis();
         WebClient webClient = proxyService.createWebClient();
         TradeResponse searchResult = searchTradeService.searchItem(webClient, searchTradeReqForm);
         if (searchResult == null) {
             return ResponseEntity.badRequest().body("Fail search");
         }
-        log.info("[search result]{}={}", searchResult.getId(), searchResult.getTotal());
+        long endMs = System.currentTimeMillis();
+
+        log.info("[search result] {}, {}, {}ms", searchResult.getId(), searchResult.getTotal(), endMs-startMs);
         return ResponseEntity.ok().body(searchResult);
     }
 }
