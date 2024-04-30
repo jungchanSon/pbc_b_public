@@ -38,7 +38,7 @@ public class TmpController {
             .build();
 
     @RequestMapping(value = "/tmp", method = RequestMethod.POST)
-    public ResponseEntity pobCode(@RequestBody TmpDto tmpDto, BindingResult result) throws DataFormatException, IOException, ParserConfigurationException, SAXException {
+    public ResponseEntity pobCode(@RequestBody TmpDto tmpDto,@RequestHeader("X-Real-IP") String clientIp, BindingResult result) throws DataFormatException, IOException, ParserConfigurationException, SAXException {
         long startMs = System.currentTimeMillis();
         System.out.println("tmpDto = " + tmpDto);
 
@@ -57,9 +57,12 @@ public class TmpController {
 //            return ResponseEntity.ok().body(tmpDto);
 //
 //        }
+        log.info("[client] {}", clientIp);
         try {
             Mono<TradeResponse> tradeResponseMono = webClient.post()
                     .uri(url)
+                    .header("Client-IP", clientIp)
+                    .header("X-Real-IP", clientIp)
                     .contentType(MediaType.APPLICATION_JSON)
                     .bodyValue(tmpDto)
                     .retrieve()
