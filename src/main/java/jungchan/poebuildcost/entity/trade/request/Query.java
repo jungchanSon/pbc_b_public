@@ -1,4 +1,4 @@
-package jungchan.poebuildcost.controller.temp;
+package jungchan.poebuildcost.entity.trade.request;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import lombok.Getter;

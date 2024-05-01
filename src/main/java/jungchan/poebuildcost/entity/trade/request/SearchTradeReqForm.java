@@ -1,4 +1,4 @@
-package jungchan.poebuildcost.controller.temp;
+package jungchan.poebuildcost.entity.trade.request;
 
 import lombok.Getter;
 import lombok.NoArgsConstructor;

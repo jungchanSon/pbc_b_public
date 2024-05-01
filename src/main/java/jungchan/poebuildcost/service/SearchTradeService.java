@@ -1,7 +1,7 @@
 package jungchan.poebuildcost.service;
 
-import jungchan.poebuildcost.controller.temp.SearchTradeReqForm;
-import jungchan.poebuildcost.controller.temp.resp.TradeResponse;
+import jungchan.poebuildcost.entity.trade.request.SearchTradeReqForm;
+import jungchan.poebuildcost.entity.trade.resp.TradeResponse;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.http.MediaType;
 import org.springframework.stereotype.Service;

@@ -1,7 +1,7 @@
 package jungchan.poebuildcost.controller;
 
-import jungchan.poebuildcost.controller.temp.SearchTradeReqForm;
-import jungchan.poebuildcost.controller.temp.resp.TradeResponse;
+import jungchan.poebuildcost.entity.trade.request.SearchTradeReqForm;
+import jungchan.poebuildcost.entity.trade.resp.TradeResponse;
 import jungchan.poebuildcost.service.ProxyService;
 import jungchan.poebuildcost.service.SearchPriceService;
 import jungchan.poebuildcost.service.SearchTradeService;
