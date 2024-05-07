@@ -28,17 +28,16 @@ public class SearchTradeController {
     private final SearchTradeService searchTradeService;
     private final SearchPriceService searchPriceService;
 
-    @RequestMapping(value = "/trade/search", method = RequestMethod.POST)
-    public ResponseEntity searchTrade(@RequestBody SearchTradeReqForm searchTradeReqForm, BindingResult result) throws DataFormatException, IOException, ParserConfigurationException, SAXException {
-        long startMs = System.currentTimeMillis();
-        WebClient webClient = proxyService.createWebClient();
-        TradeResponse searchResult = searchTradeService.searchItem(webClient, searchTradeReqForm);
-        if (searchResult == null) {
-            return ResponseEntity.badRequest().body("Fail search");
-        }
-        long endMs = System.currentTimeMillis();
-
-        log.info("[search result] {}, {}, {}ms", searchResult.getId(), searchResult.getTotal(), endMs-startMs);
-        return ResponseEntity.ok().body(searchResult);
-    }
+//    public ResponseEntity searchTrade(@RequestBody SearchTradeReqForm searchTradeReqForm, BindingResult result) throws DataFormatException, IOException, ParserConfigurationException, SAXException {
+//        long startMs = System.currentTimeMillis();
+//        WebClient webClient = proxyService.createWebClient();
+//        TradeResponse searchResult = searchTradeService.searchItem(webClient, searchTradeReqForm);
+//        if (searchResult == null) {
+//            return ResponseEntity.badRequest().body("Fail search");
+//        }
+//        long endMs = System.currentTimeMillis();
+//
+//        log.info("[search result] {}, {}, {}ms", searchResult.getId(), searchResult.getTotal(), endMs-startMs);
+//        return ResponseEntity.ok().body(searchResult);
+//    }
 }
