@@ -11,7 +11,7 @@
 
 ## Repository
  - [백엔드](https://github.com/jungchanSon/pbc_b_public)
- - [프론트엔드](https://github.com/jungchanSon/HelpTodo-front)
+ - [프론트엔드](https://github.com/jungchanSon/pbc_f_public)
  - [크롬 확장기능](https://github.com/jungchanSon/pbc_chrome_extention)
 
 
