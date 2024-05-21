@@ -15,7 +15,7 @@ import java.util.Arrays;
 @RestController
 @RequiredArgsConstructor
 @RequestMapping("/api")
-@CrossOrigin(originPatterns = {"https://*.poebuildcost.com", "https://poebuildcost.com"})
+@CrossOrigin(originPatterns = {"*"})
 public class ProfileController {
 
     private final Environment env;
