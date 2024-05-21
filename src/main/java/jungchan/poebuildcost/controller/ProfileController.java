@@ -22,10 +22,6 @@ public class ProfileController {
 
     @GetMapping("/profile")
     public String getProfile(){
-        String s = Arrays.stream(env.getActiveProfiles())
-                .findFirst()
-                .orElse("");
-
         return Arrays.stream(env.getActiveProfiles())
                 .findFirst()
                 .orElse("");
